@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding : 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+}
+
+:root{
+    --cor-primaria : #14545f;
+    --cor-secundaria :#2c9caf;
+}
+body{
+    display: block;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #FFD100, #FF9400, #C53424, #22C1DC);
+}
+header{
+    display: flex;
+    justify-content: center;
+}
+
+#container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 10px;
+    width: 100%;
+
+}
+.themes{
+    display: flex;
+    gap: 15px;
+    padding: 10px 0px;
+}
+
+.themesBtn{
+  padding: 1em 1em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color:var(--cor-secundaria);
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solidvar(--cor-secundaria);
+  font-family: "Maven Pro", sans-serif;
+  gap: 30px;
+}
+.themesBtn:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #70bdca;
+  box-shadow: 4px 5px 17px -4px #268391;
+}
+
+.themesBtn::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color:var(--cor-secundaria);
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+.themesBtn:hover::before {
+  width: 250%;
+}
+
+
+.questions{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+#resposta{
+    border-radius: 5px;
+    height: 30px;
+    padding: 10px;
+    align-items: center;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 10px;
+    padding: 10px 25px;
+    background:#ffffff;
+    max-width: 190px;
+    color: var(--cor-primaria);
+    }
+#submitBtn {
+  padding: 1em 1em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color:var(--cor-secundaria);
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solidvar(--cor-secundaria);
+}
+
+#submitBtn:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #70bdca;
+  box-shadow: 4px 5px 17px -4pxvar(--cor-secundaria);
+}
+
+#submitBtn::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color:var(--cor-secundaria);
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+#submitBtn:hover::before {
+  width: 250%;
+}
+h2 {
+    color: var(--cor-primaria);
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-family: "Bangers", system-ui;
+}
+p{
+    color: #ffffff;
+    padding:10px 0;
+    font-family: "Maven Pro", sans-serif;
+}
