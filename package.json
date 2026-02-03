@@ -1,0 +1,18 @@
+{
+  "name": "praticando-javascript-quiz-interativo",
+  "version": "1.0.0",
+  "description": "Quiz interativo em JavaScript",
+  "main": "engine.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack serve --open",
+    "test": "echo \"No tests\" && exit 0"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^5.0.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.0.0"
+  }
+}
