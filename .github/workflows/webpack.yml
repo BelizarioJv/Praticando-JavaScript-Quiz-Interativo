@@ -1,3 +1,5 @@
+# GitHub Actions workflow to install and build the project located in
+# Praticando-JavaScript-Quiz-Interativo using a Node matrix.
 name: NodeJS with Webpack
 
 on:
@@ -15,14 +17,34 @@ jobs:
         node-version: [18.x, 20.x, 22.x]
 
     steps:
-    - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
-    - name: Build
-      run: |
-        npm install
-        npx webpack
+      - name: Show workspace files (debug)
+        run: |
+          pwd
+          echo "--- root ---"
+          ls -la
+          echo "--- project folder ---"
+          ls -la Praticando-JavaScript-Quiz-Interativo || true
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: Praticando-JavaScript-Quiz-Interativo
+
+      - name: Build
+        run: npm run build
+        working-directory: Praticando-JavaScript-Quiz-Interativo
+
+      - name: Upload build artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: Praticando-JavaScript-Quiz-Interativo/dist
